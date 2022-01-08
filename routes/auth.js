@@ -10,7 +10,7 @@ const SECRET_KEY = "myrandomsecretkey"
 
 //console.log(SECRET_KEY)
 
-router.get("/",async(req,res)=>{
+router.get("/users",async(req,res)=>{
     try {
         const savedUser = await User.find()
         res.send( savedUser )
