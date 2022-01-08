@@ -29,6 +29,11 @@ mongoose.connect(
 
 app.listen(PORT,()=>console.log("server started"))
 
+app.get("/",(request,response)=>{
+    response.send("Hello from Express JS")
+})
+
+
 app.use("/user", userRouter)
 app.use("/auth", authRouter)
 app.use("/product", productRouter)
