@@ -10,6 +10,18 @@ const SECRET_KEY = "myrandomsecretkey"
 
 //console.log(SECRET_KEY)
 
+router.get("/",async(req,res)=>{
+    try {
+        const savedUser = await User.find()
+        res.send( savedUser )
+    }
+    catch (err) {
+        res.send(err)
+    }
+
+}
+)
+
 router.post("/register", async (req, res) => {
 
     const hashedpassword = await generatePassword(req.body.password)
